@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                echo 'Cloning the Git repository... in '
+                echo 'Cloning the Git repository...'
             }
         }
         stage('Build') {
@@ -16,11 +16,10 @@ pipeline {
                 echo 'Running tests...'
             }
         }
-
-        }
-        stage('Deploy') {
+        stage('Deploy') {   // ✅ Move inside the stages block
             steps {
                 echo 'Deploying the project...'
             }
         }
     }
+}
